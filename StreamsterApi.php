@@ -18,7 +18,7 @@ class StreamsterApi {
         
         if (property_exists($r, "Bar")) {
             foreach ($r->Bar as $n => $Bar) {
-                echo $Bar->BarDateTime . " " . $Bar->Open . " " . $Bar->High . " " . $Bar->Low . " " . $Bar->Close . "\n";
+                echo $n ." " . $Bar->BarDateTime . " " . $Bar->Open . " " . $Bar->High . " " . $Bar->Low . " " . $Bar->Close . "\n";
             }
         }
 
@@ -90,13 +90,13 @@ class StreamsterApi {
 
     function getSMA($period) {
         $result = trader_sma($this->getCloseFromBars(), $period);
-        print_r($result);
+        //print_r($result);
         return $result;
     }
 
     function getEMA($period) {
         $result = trader_ema($this->getCloseFromBars(), $period);
-        print_r($result);
+        //print_r($result);
         return $result;
     }
 
